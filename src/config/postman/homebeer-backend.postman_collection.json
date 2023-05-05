@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "57bb415b-bad3-46ed-b49e-5d909c705662",
+		"name": "homebeer-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/usuario",
+			"item": [
+				{
+					"name": "/usuario/autenticar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"loranteixeira@gmail.com\",\n    \"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/usuario/autenticar",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								"autenticar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuario/registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeCompleto\": \"Isabely Yamamoto\",\n    \"email\": \"isayamamoto@gmail.com\",\n    \"senha\": 123456,\n    \"cpf\": 11111111111,\n    \"telefone\": 19999999999,\n    \"dataNascimento\": \"21/07/1999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/usuario/registrar",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"usuario",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/parceiro",
+			"item": [
+				{
+					"name": "/parceiro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeCompletoDono\": \"Loran Henrique Teixeira\",\n    \"email\": \"loranteixeira@icloud.com\",\n    \"senha\": \"123456\",\n    \"celularDono\": 19992069669,\n    \"imagemLoja\": \"imagem/base64\",\n    \"nomeLoja\": \"Loja Teste\",\n    \"descricaoLoja\": \"Descricao teste para a loja\",\n    \"cnpj\": 29758021000151\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/parceiro",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"parceiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/parceiro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/parceiro",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"parceiro"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/produto",
+			"item": [
+				{
+					"name": "/produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idParceiro\": \"8ced06df-b44b-404c-9bed-00e1473c13f6\",\n    \"imagem\": \"imagem/base64\",\n    \"nome\": \"Cerveja artesanal novo parceiro\",\n    \"descricao\": \"Descricao da cerveja artesanal teste\",\n    \"preco\": 31.90\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/produto",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/produto?idParceiro=8ced06df-b44b-404c-9bed-00e1473c13f6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"produto"
+							],
+							"query": [
+								{
+									"key": "idParceiro",
+									"value": "8ced06df-b44b-404c-9bed-00e1473c13f6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/carrinho",
+			"item": [
+				{
+					"name": "/carrinho",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n    \"idProduto\": \"72554898-6f64-452d-8262-2b8a99e76385\",\n    \"idParceiro\": \"6bc3d22e-ddfe-42d0-b288-a1fd713d2db4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/carrinho",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/carrinho",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/carrinho?idUsuario=f99efdb2-6964-4aeb-8e05-7cff42670bc3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"carrinho"
+							],
+							"query": [
+								{
+									"key": "idUsuario",
+									"value": "f99efdb2-6964-4aeb-8e05-7cff42670bc3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/favorito",
+			"item": [
+				{
+					"name": "/favorito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n    \"idParceiro\": \"6bc3d22e-ddfe-42d0-b288-a1fd713d2db4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/favorito",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"favorito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/favorito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/favorito?idUsuario=f99efdb2-6964-4aeb-8e05-7cff42670bc3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"favorito"
+							],
+							"query": [
+								{
+									"key": "idUsuario",
+									"value": "f99efdb2-6964-4aeb-8e05-7cff42670bc3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/pedido",
+			"item": [
+				{
+					"name": "/pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n        \"idProduto\": \"72554898-6f64-452d-8262-2b8a99e76385\",\n        \"idParceiro\": \"6bc3d22e-ddfe-42d0-b288-a1fd713d2db4\"\n    },\n    {\n        \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n        \"idProduto\": \"e17dfdc7-704a-4e96-a5a2-d59bbc91fc44\",\n        \"idParceiro\": \"8ced06df-b44b-404c-9bed-00e1473c13f6\"\n    },\n        {\n        \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n        \"idProduto\": \"72554898-6f64-452d-8262-2b8a99e76385\",\n        \"idParceiro\": \"6bc3d22e-ddfe-42d0-b288-a1fd713d2db4\"\n    },\n    {\n        \"idUsuario\": \"f99efdb2-6964-4aeb-8e05-7cff42670bc3\",\n        \"idProduto\": \"e17dfdc7-704a-4e96-a5a2-d59bbc91fc44\",\n        \"idParceiro\": \"8ced06df-b44b-404c-9bed-00e1473c13f6\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/pedido",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/pedido?idUsuario=f99efdb2-6964-4aeb-8e05-7cff42670bc3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"pedido"
+							],
+							"query": [
+								{
+									"key": "idUsuario",
+									"value": "f99efdb2-6964-4aeb-8e05-7cff42670bc3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:3333/api",
+			"type": "string"
+		}
+	]
+}
