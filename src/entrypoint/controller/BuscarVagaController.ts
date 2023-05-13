@@ -6,6 +6,8 @@ export class BuscarVagaController {
 
   public async handle(): Promise<IVagaResponse[]> {
     const vagas: VagaEntity[] = await this.usecase.execute();
+    console.log(vagas);
+    
     return vagas.map((vaga: VagaEntity) => ({
       id: vaga.id,
       nome: vaga.nome,
