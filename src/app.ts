@@ -48,7 +48,7 @@ class App {
   private conectarMongoDB(): void {
     mongoose.set('strictQuery', false);
     mongoose
-      .connect('mongodb+srv://loran:estacionamento@cluster0.m9q8quv.mongodb.net/test', {
+      .connect('mongodb+srv://Leonardo10:Leonardo10@cluster0.jxogsej.mongodb.net/test', {
         socketTimeoutMS: 30000,
         keepAlive: true,
         maxPoolSize: 50,
